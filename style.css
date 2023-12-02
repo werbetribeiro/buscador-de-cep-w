@@ -23,6 +23,17 @@ body {
     gap: 50px;
 }
 
+.titulo {
+    display: flex;
+    gap: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #002672;
+    text-align: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
 .buscador {
     display: flex;
     align-items: center;
@@ -66,10 +77,10 @@ body {
 #resultado {
     width: fit-content;
     border-radius: 16px;
-    border-top: 5px solid #F7D800;
+/*     border-top: 5px solid #F7D800;
     border-right: 1px solid #F7D800;
     border-bottom: 1px solid #F7D800;
-    border-left: 1px solid #F7D800;
+    border-left: 1px solid #F7D800; */
     color: #0036a3;
     font-weight: 500;
     font-size: 20px;

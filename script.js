@@ -5,9 +5,12 @@ function mostrar() {
   fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`)
   .then(response => response.json())
   .then(data => {
-              let resultado = document.getElementById('drop')
-              resultado.id = 'resultado'
-              if (data.street) {
+              let resultado = document.getElementById('resultado')
+
+              if (data.message) {
+                resultado.innerHTML = `<span>CEP: Não encontrado</span>`
+              }
+              else if (data.street) {
                 resultado.innerHTML = 
                 `
                 <span>CEP: ${data.cep}</span>
@@ -17,6 +20,7 @@ function mostrar() {
                 `
               }
               else {
+                //Caso o resultado não tenha rua
                 resultado.innerHTML = 
                 `
                 <span>CEP: ${data.cep}</span>
@@ -25,5 +29,10 @@ function mostrar() {
                 `
               }
     })
-  document.getElementById('buscar').value = ""
+    //Resetar o cep da pesquisa após 8 segundos
+/*     function reset() {
+      document.getElementById('buscar').value = ""
+      console.log('OK')
+    }
+    setTimeout(reset, 3500) */
 }
