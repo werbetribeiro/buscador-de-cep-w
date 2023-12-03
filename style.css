@@ -11,84 +11,118 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Inter';
     justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
 }
 
 #container {
-    display: flex;
-    padding: 35px 15px;
+    max-width: 490px;
+    display: flex;  
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 50px;
+    padding: 15px;
 }
-
+  
 .titulo {
-    display: flex;
-    gap: 14px;
-    font-weight: bold;
+    width: 100%;
     text-transform: uppercase;
     color: #002672;
-    text-align: center;
-    justify-content: center;
+    font-weight: bold;
     font-size: 36px;
-}
 
-.buscador {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 14px;
+}
+  
+.buscador {
+    width: 100%;
+    max-width: 430px;
+    min-width: 320px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
     padding: 5px;
     border-radius: 16px;
-    border: 1px solid #009739;
+    border: 1px solid #009739;  
+    gap: 5px;
 }
-
+  
 .buscador input[type='text'] {
     outline: none;
     border: none;
-    padding: 10px 0px 10px 32px;
-    font-size: 20px;
+    width: 100%;
     font-weight: 500;
-    background: none;
     color: #002672;
+    font-size: 20px;
+    background: none;
 }
-
+  
 .buscador input[type='text']::placeholder {
     color: #002672;
+    font-size: 20px;
 }
-
+  
 .buscador input[type='button'] {
-    display: flex;
-    padding: 13px 33px;
-    border-radius: 12px;
+    outline: none;
+    border: none;
     background: #002672;
     color: #f7d800;
-    text-transform: uppercase;
+    font-size: 20px;
     font-weight: bold;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 12px;
+    padding: 0 33px;
     transition: background 0.3s;
+    cursor: pointer;
 }
-
+  
 .buscador input[type='button']:hover {
-    background: #0036a3;
+      background: #0036a3;
 }
-
+  
 #resultado {
-    width: fit-content;
-    border-radius: 16px;
-/*     border-top: 5px solid #F7D800;
-    border-right: 1px solid #F7D800;
-    border-bottom: 1px solid #F7D800;
-    border-left: 1px solid #F7D800; */
-    color: #0036a3;
-    font-weight: 500;
-    font-size: 20px;
-
     display: flex;
-    padding: 10px 20px 5px 20px;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 5px;
+    font-size: 20px;
+    color: #002672;
+    font-weight: 500;
+}
+  
+@media (max-width: 444px) {
+    #container {
+        max-width: 410px;
+        gap: 35px;
+    }
+
+    .titulo {
+        font-size: 26px;
+        gap: 7px;
+    }
+
+    .buscador input[type='text']::placeholder {
+        color: #002672;
+        font-size: 16px;
+    }  
+
+    .buscador input[type='button'] {
+        padding: 0 24px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .buscador {
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    #resultado {
+        font-size: 18px;
+    }
 }

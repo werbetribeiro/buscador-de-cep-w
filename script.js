@@ -29,10 +29,4 @@ function mostrar() {
                 `
               }
     })
-    //Resetar o cep da pesquisa após 8 segundos
-/*     function reset() {
-      document.getElementById('buscar').value = ""
-      console.log('OK')
-    }
-    setTimeout(reset, 3500) */
 }
